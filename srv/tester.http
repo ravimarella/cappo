@@ -1,0 +1,59 @@
+GET http://localhost:4004/odata/v4/CatalogService/BusinessPartnerSet
+
+###
+DELETE http://localhost:4004/odata/v4/CatalogService/BusinessPartnerSet/74867AD200E41EDBA5D8B06885A56052
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$top=2
+
+
+###
+
+PATCH http://localhost:4004/odata/v4/CatalogService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+Content-Type: application/json
+
+{
+      "salaryAmount":200000,
+      "Currency_code":"EUR"
+}
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC28052?$expand=Items
+###
+POST http://localhost:4004/odata/v4/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC28052')/CatalogService.boost
+Content-Type: application/json
+
+{}
+
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/POs('')/CatalogService.largestOrder()
+
+
+###
+GET http://localhost:4004/odata/v4/mysrvdemo/ReadEmployeeSrv
+
+###
+GET http://localhost:4004/odata/v4/mysrvdemo/ReadEmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C197A7FB
+
+###
+POST http://localhost:4004/odata/v4/mysrvdemo/InsertEmployeeSrv
+Content-Type: application/json
+
+{
+      "ID": "02BD2137-0890-1EEA-A6C2-BB55C1ABCDEF",
+      "nameFirst": "INSERTED",
+      "nameMiddle": null,
+      "nameLast": "FROM SERVICE",
+      "nameInitials": null,
+      "sex": "F",
+      "language": "E",
+      "phoneNumber": "1224374524",
+      "email": "sally.spring@itelo.info",
+      "loginName": "SPRINGS",
+      "Currency_code": "USD",
+      "salaryAmount": 55549,
+      "accountNumber": "111222333",
+      "bankId": "510000",
+      "bankName": "My Bank of Antioch"
+    }
